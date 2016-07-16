@@ -5,7 +5,7 @@ CSAPP_SRC = ../../src
 CFLAGS = -Wall -O1 -I $(CSAPP_INC) -I .
 LDLIBS = -lpthread
 
-PROGS =	hex2dd
+PROGS =	hostinfo
 
 all: $(PROGS)
 
