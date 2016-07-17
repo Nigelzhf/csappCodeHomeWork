@@ -15,8 +15,5 @@ $(CSAPP_SRC)/csapp.o: $(CSAPP_SRC)/csapp.c $(CSAPP_INC)/csapp.h
 
 .PHONY : clean
 
-run:
-	./$(PROGS)
-
 clean :
 	-rm $(PROGS)
