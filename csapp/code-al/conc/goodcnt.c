@@ -1,5 +1,5 @@
-/* 
- * goodcnt.c - A correctly synchronized counter program 
+/*
+ * goodcnt.c - A correctly synchronized counter program
  */
 /* $begin goodcnt */
 #include "csapp.h"
@@ -12,7 +12,7 @@ void *thread(void *vargp); /* Thread routine prototype */
     sem_t mutex;           /* Semaphore that protects counter */
 /* $end goodcntsemdef */
 
-int main(int argc, char **argv) 
+int main(int argc, char **argv)
 {
     int niters;
     pthread_t tid1, tid2;
@@ -42,18 +42,17 @@ int main(int argc, char **argv)
 }
 
 /* Thread routine */
-void *thread(void *vargp) 
+void *thread(void *vargp)
 {
     int i, niters = *((int *)vargp);
 
 /* $begin goodcntthread */
     for (i = 0; i < niters; i++) {
-	P(&mutex);
-	cnt++;
-	V(&mutex);
+    	P(&mutex);
+    	cnt++;
+    	V(&mutex);
     }
 /* $end goodcntthread */
     return NULL;
 }
 /* $end goodcnt */
-
